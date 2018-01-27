@@ -1,0 +1,13 @@
+.headers
+  %h2= "Queens projekt"
+
+.welcome-img-all-wrap
+  .welcome-img-wrapper
+    = link_to image_tag('document.jpg'), products_path, :class => "welcome-img"
+    .welcome-image-text
+      = link_to "Produkty", products_path
+
+  .welcome-img-wrapper
+    = link_to image_tag('document.jpeg'), documents_path, :class => "welcome-img"
+    .welcome-image-text
+      = link_to "Doklady", documents_path

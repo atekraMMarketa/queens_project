@@ -1,0 +1,8 @@
+= @product.name
+%br
+= @product.description
+%br
+- @product.variants.each do |variant|
+  = variant.name
+%br
+= image_tag @product.picture(:medium)

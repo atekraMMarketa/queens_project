@@ -1,0 +1,8 @@
+.headers
+  %h2= "Produkty"
+
+= link_to fa_icon('plus', :text => "Přidat nový produkt"), new_product_path, :class => 'btn btn-default'
+
+
+%br
+= render  'products/products_table'

@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %title QueensProject
+    = stylesheet_link_tag    'application', :media => 'all', 'data-turbolinks-track' => 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+    = csrf_meta_tags
+
+  %body{ :id => "#{params[:controller].gsub('/', '_')}-#{action_name}"}
+    %nav.navbar.navbar-inverse.navbar-fixed-top{ :role => 'navigation' }
+      = render 'elements/navbar'
+
+    .container
+      = render 'elements/flash'
+
+      = yield
+
+    #modal_wrapper

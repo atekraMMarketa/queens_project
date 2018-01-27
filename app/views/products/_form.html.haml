@@ -1,0 +1,24 @@
+= simple_form_for  @product do |f|
+  = f.input :name, :label => "Název:"
+  = f.input :description, :label => "Popis:"
+  = f.input :picture, as: :file, :label => "Obrázek"
+
+  = f.label "Varianty:"
+  %a#addScnt{:href => "#"} Přidat další variantu
+  %table.dynatable
+    %thead
+      %tr
+        %th Název
+        %th
+    %tbody#p_scents
+      - @product.variants.each do |variant|
+        = f.fields_for variant do |ilf|
+          = ilf.hidden_field :id
+          %tr
+            %td= ilf.input :name, :label => false
+
+            %td
+              = link_to 'Remove', '#', :id => 'js-remove-product-variant'
+
+
+  = f.submit "Uložit"

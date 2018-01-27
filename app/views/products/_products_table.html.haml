@@ -1,0 +1,17 @@
+- if @products.present?
+  %table.table.table-hover.top-spaced.Products-table
+    %thead
+      %tr
+        %th Produkt
+        %th
+
+    %tbody
+      - @products.each do |product|
+        %tr
+          %td=product.name
+
+          %td
+            = link_to "Zobrazit", product_path(product)
+            = link_to "Smazat", product_path(product), :method => :delete, :data => { :confirm => "Jste si jisti, že chcete smazat tento produkt?" }
+- else
+  = "Nejsou zde zatím žádné produkty"
