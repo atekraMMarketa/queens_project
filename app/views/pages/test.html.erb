@@ -1,0 +1,35 @@
+<html>
+<head>
+  <script type="text/javascript">
+      var idArray = [];
+      var defaultColor = '#000000';
+
+      function makeItemsBlink(blinkTime) {
+          blinkForTime('q1', blinkTime, '#ff0000');
+          blinkForTime('q2', blinkTime, '#00ff00');
+          blinkForTime('q3', blinkTime, '#0000ff');
+      }
+
+      function blinkForTime(id, blinkTime, blinkColor) {
+          idArray[id] = setInterval('toggleColor("' + id + '", "' + blinkColor + '")', 400);
+          setTimeout('stopBlinking("' + id + '")', blinkTime);
+      }
+
+      function stopBlinking(id) {
+          clearInterval(idArray[id]);
+          document.getElementById(id).style.color = defaultColor;
+      }
+
+      function toggleColor(id, blinkColor) {
+          var e = document.getElementById(id);
+          var currentColor = e.style.color;
+          if (currentColor == defaultColor) {
+              e.style.color = blinkColor;
+          }
+          else {
+              e.style.color = defaultColor;
+          }
+      }
+  </script>
+</head>
+<body onload="makeItemsBlink(3000);">

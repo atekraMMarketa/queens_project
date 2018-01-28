@@ -13,6 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require magicsuggest
 //= require bootstrap.min
 //= require_tree .

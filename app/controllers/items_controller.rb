@@ -7,4 +7,14 @@ class ItemsController < ApplicationController
       end
     end
   end
+
+  def destroy
+    respond_to do |format|
+      format.js do
+        @item = Item.find params[:id]
+        @document = @item.document
+        @item.destroy
+      end
+    end
+  end
 end

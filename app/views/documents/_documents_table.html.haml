@@ -12,6 +12,6 @@
 
           %td
             = link_to fa_icon('eye', :text => "Zobrazit"), document_path(document), :class => 'btn btn-default'
-            = link_to fa_icon('trash', :text => "Smazat"), document_path(document), :method => :delete, :class => 'btn btn-default', :data => { :confirm => "Jste si jisti, že chcete smazat tento doklad?" }
+            = link_to fa_icon('trash', :text => "Smazat"), document_path(document), :method => :delete, :class => 'btn btn-default', :remote => true, :data => { :confirm => "Jste si jisti, že chcete smazat tento doklad?" }
 - else
   = "Nejsou zde zatím žádné doklady"

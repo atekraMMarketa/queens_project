@@ -22,8 +22,13 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find params[:id]
-    @product.destroy
+    respond_to do |format|
+      format.js do
+        @product = Product.find params[:id]
+        @product.destroy
+        @products = Product.all
+      end
+    end
   end
 
   private

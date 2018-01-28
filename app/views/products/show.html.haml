@@ -6,11 +6,13 @@
 = @product.description
 
 .pull-right
-  = image_tag @product.picture(:medium)
+  - if @product.picture.present?
+    = image_tag @product.picture(:medium)
+  - else
+    = image_tag 'medium/missing.png'
 
 %h4="Dostupné varianty:"
 
-- @product.variants.each do |variant|
-  .variant-box
-    = variant.name
+.variants
+  = render  'variants/variants'
 

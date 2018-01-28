@@ -54,6 +54,12 @@ function initVariantSuggest(selector) {
     }
 }
 
+function BlinkBackground(el) {
+    el.style.backgroundColor = "#999"
+    setInterval(function() {
+        el.style.backgroundColor = "white"
+    },1000);
+}
 
 
 $(function() {
@@ -62,4 +68,7 @@ $(function() {
         initVariantSuggest(el);
     });
 
+    $('.flash').each(function(index, el) {
+        BlinkBackground(el);
+    });
 });

@@ -38,7 +38,7 @@ body {
     color: white;
     background-image: linear-gradient(to bottom, #808080 0%, #696969 100%);
     text-align: center;
-    width: 207px;
+    width: 217px;
     margin: 0 30px 5px 30px;
     letter-spacing: 0.8px;
     text-transform: uppercase;
@@ -91,19 +91,48 @@ body {
   }
 }
 
-.variant-box {
+.item-box {
 
   border-radius: 4px;
-  border: 1px solid #bceebc;
-  margin-bottom: 10px;
+  border: 3px solid #999;
   margin-top: 10px;
   display: inline-block;
+  width: 100px;
+  height: 100px;
+  text-align: center;
 
+  /* unvisited link */
+  a:link {
+    color: #000000;
+    position: relative;
+    top: 10px;
+  }
 
-  .media-body {
-    background-color: #dcfadc;
-    padding: 15px;
+  /* visited link */
+  a:visited {
     color: #696969;
+    position: relative;
+    top: 10px;
+  }
 
+}
+
+.variant-box {
+
+  border: 5px solid #999;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+
+  /* unvisited link */
+  h3 {
+    color: #000000;
+  }
+
+  a {
+    color: #000000;
+    position: relative;
+    top: 10px;
   }
 }

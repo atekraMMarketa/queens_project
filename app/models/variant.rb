@@ -10,8 +10,11 @@
 #
 
 class Variant < ApplicationRecord
-  has_many :items
+  has_many :items, :dependent => :destroy
   belongs_to :product, :optional => true
+
+  validates_presence_of :name
+
 
   def full_name
     "#{product.name}, varianta: #{name}"

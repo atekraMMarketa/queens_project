@@ -32,8 +32,13 @@ class DocumentsController < ApplicationController
   end
 
   def destroy
-    @document = Document.find params[:id]
-    @document.destroy
+    respond_to do |format|
+      format.js do
+        @document = Document.find params[:id]
+        @document.destroy
+        @documents = Document.all
+      end
+    end
   end
 
   private

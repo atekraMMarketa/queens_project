@@ -13,4 +13,10 @@ Rails.application.routes.draw do
       post :variants
     end
   end
+
+  resources :pages do
+    collection do
+      get :test
+    end
+  end
 end

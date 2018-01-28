@@ -1,0 +1,6 @@
+- variant_from_params = params[:variant_id] if params[:variant_id].present? || []
+
+- @product.variants.each do |variant|
+   .variant-box{ :class => ('flash' if variant.id == variant_from_params.to_i) }
+      %h4= variant.name
+      = link_to fa_icon('trash', :text => "Smazat"), product_variant_path(@product, variant), :method => :delete, :remote => true, :data => { :confirm => "Jste si jisti, že chcete smazat tuto variantu?" }

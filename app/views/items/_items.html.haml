@@ -1,0 +1,7 @@
+- @document.items.each do |item|
+  .item-box
+    = link_to item.variant.full_name, product_path(item.variant.product, :variant_id => item.variant.id)
+    %br
+    = link_to fa_icon('trash', :text => "Smazat"), item_path(item), :method => :delete, :remote => true, :data => { :confirm => "Jste si jisti, že chcete smazat tuto položku?" }
+
+
