@@ -36,7 +36,7 @@ body {
   .welcome-image-text {
     padding: 3px;
     color: white;
-    background-image: linear-gradient(to bottom, #00ac00 0%, #007c00 100%);
+    background-image: linear-gradient(to bottom, #808080 0%, #696969 100%);
     text-align: center;
     width: 207px;
     margin: 0 30px 5px 30px;
@@ -88,5 +88,22 @@ body {
         float: left;
       }
     }
+  }
+}
+
+.variant-box {
+
+  border-radius: 4px;
+  border: 1px solid #bceebc;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  display: inline-block;
+
+
+  .media-body {
+    background-color: #dcfadc;
+    padding: 15px;
+    color: #696969;
+
   }
 }

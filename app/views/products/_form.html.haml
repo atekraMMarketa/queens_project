@@ -1,14 +1,22 @@
 = simple_form_for  @product do |f|
-  = f.input :name, :label => "Název:"
-  = f.input :description, :label => "Popis:"
-  = f.input :picture, as: :file, :label => "Obrázek"
+  .form-group
+    = f.label "Název"
+    = f.input :name, :label => false, :class => 'form-control'
+  .form-group
+    = f.label "Popis"
+    = f.input :description, :label => false, :class => 'form-control'
+  .form-group
+    = f.label "Obrázek produktu"
+    = f.input :picture, as: :file, :label => false, :class => 'form-control'
+  .form-group
+    = f.label "Varianty:"
 
-  = f.label "Varianty:"
+
   %a#addScnt{:href => "#"} Přidat další variantu
   %table.dynatable
     %thead
       %tr
-        %th Název
+        %th Název varianty
         %th
     %tbody#p_scents
       - @product.variants.each do |variant|
@@ -18,7 +26,8 @@
             %td= ilf.input :name, :label => false
 
             %td
-              = link_to 'Remove', '#', :id => 'js-remove-product-variant'
+              = link_to fa_icon('trash', :text => "Smazat"), :id => 'js-remove-product-variant'
 
 
-  = f.submit "Uložit"
+  .pull-left
+    = f.submit "Uložit", :class => 'btn btn-default'

@@ -9,7 +9,11 @@ class DocumentsController < ApplicationController
   end
 
   def new
-    @document = Document.new
+    respond_to do |format|
+      format.js do
+        @document = Document.new
+      end
+    end
   end
 
   def create

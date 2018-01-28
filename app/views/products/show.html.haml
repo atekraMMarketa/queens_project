@@ -1,8 +1,16 @@
-= @product.name
-%br
+.headers
+  %h2= @product.name
+
+%h4="Popis produktu:"
+
 = @product.description
-%br
+
+.pull-right
+  = image_tag @product.picture(:medium)
+
+%h4="Dostupné varianty:"
+
 - @product.variants.each do |variant|
-  = variant.name
-%br
-= image_tag @product.picture(:medium)
+  .variant-box
+    = variant.name
+

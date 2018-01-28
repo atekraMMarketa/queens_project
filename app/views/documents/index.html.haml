@@ -1,8 +1,8 @@
-.headers
-  %h2= "Doklady"
+.new_document
+  .headers
+    %h2= "Doklady"
 
-= link_to fa_icon('plus', :text => "Přidat nový doklad"), new_document_path, :class => 'btn btn-default'
+  = link_to fa_icon('plus', :text => "Přidat nový doklad"), new_document_path, :class => 'btn btn-default', :remote => true
 
-
-%br
-= render  'documents/documents_table'
+  %br
+  = render  'documents/documents_table'
