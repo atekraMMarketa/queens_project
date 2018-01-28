@@ -1,0 +1,1 @@
+= @variants.map { |v| { :id => v.id, :label => v.full_name, :picture_url => v.product.picture.url(:thumb) } }.to_json.html_safe

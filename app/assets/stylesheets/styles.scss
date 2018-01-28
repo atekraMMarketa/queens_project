@@ -49,3 +49,44 @@ body {
     }
   }
 }
+
+.ms-ctn {
+  .ms-res-ctn {
+    overflow: hidden;
+
+    .ms-res-item {
+      .ms-res-item-content {
+        max-width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+
+        img.avatar {
+          max-width: 32px;
+          margin-right: 8px;
+        }
+
+        .info {
+          float: top;
+          color: #999;
+          font-size: 15pt;
+        }
+      }
+    }
+  }
+
+  .ms-sel-ctn {
+    margin-left: 0;
+
+    input[type="text"] {
+      min-height: 22px;
+      margin: 0;
+    }
+
+    .ms-sel-item {
+      .ms-sel-item-content {
+        float: left;
+      }
+    }
+  }
+}

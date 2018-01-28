@@ -12,4 +12,8 @@
 class Variant < ApplicationRecord
   has_many :items
   belongs_to :product, :optional => true
+
+  def full_name
+    "#{product.name}, varianta: #{name}"
+  end
 end

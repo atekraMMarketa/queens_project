@@ -1,0 +1,17 @@
+- if @documents.present?
+  %table.table.table-hover.top-spaced
+    %thead
+      %tr
+        %th Doklad
+        %th
+
+    %tbody
+      - @documents.each do |document|
+        %tr
+          %td=document.name
+
+          %td
+            = link_to "Zobrazit", document_path(document)
+            = link_to "Smazat", document_path(document), :method => :delete, :data => { :confirm => "Jste si jisti, že chcete smazat tento doklad?" }
+- else
+  = "Nejsou zde zatím žádné doklady"

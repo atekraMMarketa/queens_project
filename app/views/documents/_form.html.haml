@@ -1,0 +1,7 @@
+= simple_form_for  @document do |f|
+  = f.input :name, :label => "Název:"
+
+
+
+  = label_tag :variants_tokens, "Výběr položek z variant produktů"
+  = text_field_tag :variants_tokens, nil, :class => 'form-control item-input', :placeholder => "vyberte"

@@ -6,7 +6,11 @@ Rails.application.routes.draw do
     resources :variants
   end
 
-  resources :documents do
-    resources :items
+  resources :documents
+
+  resources :items do
+    collection do
+      post :variants
+    end
   end
 end
