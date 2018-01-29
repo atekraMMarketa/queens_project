@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
     respond_to do |format|
       format.json do
         @variants = Variant.all
+        @variants = @variants.where('name LIKE ?', "%#{params[:query]}%") if params[:query].present?
       end
     end
   end

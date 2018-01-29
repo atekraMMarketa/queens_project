@@ -9,11 +9,7 @@ class DocumentsController < ApplicationController
   end
 
   def new
-    respond_to do |format|
-      format.js do
-        @document = Document.new
-      end
-    end
+    @document = Document.new
   end
 
   def create
@@ -27,7 +23,7 @@ class DocumentsController < ApplicationController
 
       redirect_to document_path(@document), :notice => "Dokument byl úspěšně přidán"
     else
-      redirect_to :back, :flash => { :error => (@document.errors.full_messages.join("\n") unless @document.persisted?) }
+      redirect_to :back, :flash => { :error => ("Název dokumentu musí být zadán" unless @document.persisted?) }
     end
   end
 

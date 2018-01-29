@@ -1,12 +1,12 @@
-= form_tag documents_path do
+= simple_form_for  @document do |f|
 
   .form-group
-    = label_tag 'document[name]', "Název dokladu"
-    = text_field_tag 'document[name]', nil, :class => 'form-control', :placeholder => "Např. Faktura číslo 1234567"
+    = f.label "Název"
+    = f.input :name, :label => false, :class => 'form-control', :placeholder => "Např. Faktura číslo 1234567"
 
   .form-group
     = label_tag :variants_tokens, "Výběr položek z variant produktů"
     = text_field_tag :variants_tokens, nil, :class => 'form-control item-input', :placeholder => "vyberte"
-  %br
+
   .pull-left
-    = submit_tag "uložit", :class => 'btn btn-default'
+    = f.submit "Uložit", :class => 'btn btn-default'

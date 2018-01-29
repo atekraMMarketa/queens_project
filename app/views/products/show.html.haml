@@ -6,10 +6,7 @@
 = @product.description
 
 .pull-right
-  - if @product.picture.present?
-    = image_tag @product.picture(:medium)
-  - else
-    = image_tag 'medium/missing.png'
+  = image_tag picture_url(@product, :medium)
 
 %h4="Dostupné varianty:"
 
